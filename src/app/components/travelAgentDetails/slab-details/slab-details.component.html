@@ -1,0 +1,121 @@
+<div class="container">
+    <h3 style="text-align: center;">Slab Details</h3>
+    <table border="2" id="employees">
+
+        <tr>
+            <th>Slab Id</th>
+            <th>Slab_Amount</th>
+            <th>Designation</th>
+
+        </tr>
+        <tr *ngFor="let slabMaster of  slabMasters ">
+            <td>{{slabMaster.slabId}}</td>
+            <td>{{slabMaster.slabAmount}}</td>
+            <td>{{slabMaster.designation}}</td>
+            <!-- <td><input type="button" value="Check Status"  (click)="onClickCheckStatus(travelRequest.travelRequestId)"></td> -->
+            <!-- <td></td> -->
+        </tr>
+
+    </table>
+
+
+    <div class="container">
+        <h3 style="text-align: center;">Travel Request Details</h3>
+        <table border="2" id="employees">
+
+            <tr>
+                <td>TravelTrequest Id</td>
+                <td>{{travelRequest.travelRequestId}}</td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td>{{travelRequest.employeeDetails.designation}}</td>
+            </tr>
+            <tr>
+                <td>Travel Purpose</td>
+                <td>{{travelRequest.travelPurpose}}</td>
+
+            </tr>
+            <tr>
+                <td>Travel Start Date</td>
+                <td>{{travelRequest.startDate}}</td>
+            </tr>
+            <tr>
+                <td>Travel End Date</td>
+                <td>{{travelRequest.endDate}}</td>
+            </tr>
+            <tr>
+                <td>Manager Satus</td>
+                <td style="color: green;">{{travelRequest.managerStatus}}</td>
+            </tr>
+            <tr>
+                <td>Agent Status</td>
+                <td>
+                    <select (change)="onChange($event)">
+                        <option *ngFor="let i of options">{{i}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr [hidden]="visible">
+                <td>Reason</td>
+                <td><select name="reason" (change)="onClickReason($event)"> 
+                    <option *ngFor="let i of reasons">{{i}}</option>   
+                </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Director Status</td>
+                <td>{{travelRequest.directorStatus}}</td>
+            </tr>
+            <tr>
+                <td>Destination From</td>
+                <td>{{travelRequest.destinationFrom}}</td>
+            </tr>
+            <tr>
+                <td>Destination To</td>
+                <td>{{travelRequest.destinationTo}}</td>
+            </tr>
+            <!-- <form action="/action_page.php">
+                <label for="cars">Choose a car:</label>
+                <select name="cars" id="cars">
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+              </form> -->
+
+            <!-- <th></th>
+            <th>Travel Purpose</th>
+            <th>Travel Start Date</th>
+            <th>Travel End Date</th>
+            <th>Manager Satus</th>
+            <th>Agent Status</th>
+            <th>Director Status</th>
+            <th>Destination From</th>
+            <th>Destination To</th>
+            <th colspan="3" style="text-align: center;">Action</th>
+             <th colspan="3" id="action" style="text-align: center;">Action</th> 
+            </tr>
+            <tr>
+                <td>{{travelRequest.travelRequestId}}</td>
+                <td>{{travelRequest.employeeDetails.designation}}</td>
+                <td>{{travelRequest.travelPurpose}}</td>
+                <td>{{travelRequest.startDate}}</td>
+                <td>{{travelRequest.endDate}}</td>
+                <td>{{travelRequest.managerStatus}}</td>
+                <td>{{travelRequest.agentStatus}}</td>
+                <td>{{travelRequest.directorStatus}}</td>
+                <td>{{travelRequest.destinationFrom}}</td>
+                <td>{{travelRequest.destinationTo}}</td>
+                <td><input type="button" value="Approve"></td>
+                <td><input type="button" value="Send To Dir"></td>
+                <td><input type="button" value="Reject" style="text-align: center; background-color:#FD5D5D ;"></td>
+
+            </tr> -->
+        </table> <br>
+       <input type="button"  value="Do Booking" (click)="onClickBooking(travelRequest.travelRequestId)">
+    </div>

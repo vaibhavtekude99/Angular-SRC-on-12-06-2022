@@ -1,0 +1,35 @@
+<div class="container">
+    <h3>All TravelRequests</h3>
+<table border="2" id="employees">
+
+    <tr>
+        <th>TravelTrequest Id</th>
+        <th>Employee Id</th>
+        <th>Travel Purpose</th>
+        <th>Travel Start Date</th>
+        <th>Travel End Date</th>
+        <th>Manager Satus</th>
+        <th>Agent Status</th>
+        <th>Director Status</th>
+         <th>Destination From</th>
+         <th>Destination To</th>
+         <th colspan="3" style="text-align:center;">Action</th> 
+    </tr>
+    <tr *ngFor="let travelRequest of allTravelRequests">
+        <td>{{travelRequest.travelRequestId}}</td>
+        <td>{{travelRequest.employeeDetails.employeeId}}</td>
+        <td>{{travelRequest.travelPurpose}}</td>
+        <td>{{travelRequest.startDate}}</td>
+        <td>{{travelRequest.endDate}}</td>
+        <td>{{travelRequest.managerStatus}}</td>
+        <td>{{travelRequest.agentStatus}}</td>
+        <td>{{travelRequest.directorStatus}}</td>
+        <td>{{travelRequest.destinationFrom}}</td>
+        <td>{{travelRequest.destinationTo}}</td>
+
+        <td ><input type="button" value="Details" (click)="onClickDetails(travelRequest.travelRequestId)"></td>
+        <td><input type="button" value="Approve" (click)="onClickApprove(travelRequest.travelRequestId)" ></td>
+        <td><input type="button" value="Reject" (click)="onClickReject(travelRequest.travelRequestId)" style="background-color:#FD5D5D;"></td>
+</tr>
+
+</table>
